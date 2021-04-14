@@ -1,3 +1,4 @@
+prevent_proxy_connections: false
 listeners:
 - query_port: 25577
   motd: '&1Another Bungee server'
@@ -8,7 +9,7 @@ listeners:
     pvp.md-5.net: pvp
   ping_passthrough: false
   priorities:
-  - Survival
+  - Main
   bind_local_address: true
   host: 0.0.0.0:25570
   max_players: 100
@@ -29,22 +30,21 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
-stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
 player_limit: -1
 ip_forward: true
 groups:
-  md_5:
+  MoWobbler:
   - admin
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-prevent_proxy_connections: false
+stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
 online_mode: true
 forge_support: false
 disabled_commands:
 - disabledcommandhere
 servers:
-  Survival:
+  Main:
     motd: '&1build.simpvp.net'
-    address: 127.0.0.1:25575
+    address: 127.0.0.25:25575
     restricted: false
