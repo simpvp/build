@@ -2,6 +2,7 @@ connection_throttle: 4000
 connection_throttle_limit: 3
 disabled_commands:
 - global
+- server
 forge_support: false
 groups:
   MoWobbler:
