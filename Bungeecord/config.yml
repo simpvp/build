@@ -1,19 +1,4 @@
-connection_throttle: 4000
-connection_throttle_limit: 3
-disabled_commands:
-- global
-- server
-forge_support: false
-groups:
-  MoWobbler:
-  - admin
-  Yukarion:
-  - admin
-  MisterStrawman:
-  - admin
-  ostrich1414:
-  - admin
-ip_forward: true
+server_connect_timeout: 5000
 listeners:
 - query_port: 25577
   motd: '&1Another Bungee server'
@@ -30,10 +15,8 @@ listeners:
   max_players: 100
   tab_size: 60
   force_default_server: true
-log_commands: false
-log_pings: true
+remote_ping_cache: -1
 network_compression_threshold: 256
-online_mode: true
 permissions:
   default:
   - bungeechat.message.join
@@ -53,19 +36,36 @@ permissions:
   - bungeechat.command.staffchat.view
   - bungeechat.command.staffchat
   - bungeechat.command.alert
-player_limit: -1
+log_pings: true
+connection_throttle_limit: 3
 prevent_proxy_connections: false
-remote_ping_cache: -1
+timeout: 30000
+player_limit: -1
+ip_forward: true
+groups:
+  MoWobbler:
+  - admin
+  Yukarion:
+  - admin
+  MisterStrawman:
+  - admin
+  ostrich1414:
+  - admin
 remote_ping_timeout: 5000
-server_connect_timeout: 5000
+connection_throttle: 4000
+log_commands: false
+stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
+online_mode: true
+forge_support: false
+disabled_commands:
+- global
+- server
 servers:
   Survival:
-    motd: '&1build.simpvp.net'
+    motd: '&1build.simpvp.net 1.17.1'
     address: 127.0.0.25:25575
     restricted: false
   EventWorld:
-    motd: '&1build.simpvp.net'
+    motd: '&1build.simpvp.net 1.17.1'
     address: 127.0.0.25:25580
     restricted: false
-stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
-timeout: 30000

@@ -12,8 +12,11 @@
 
 use-display-name-in-quit-message: false
 verbose: false
-config-version: 20
+config-version: 24
 settings:
+  lag-compensate-block-breaking: true
+  send-full-pos-for-hard-colliding-entities: true
+  log-player-ip-addresses: true
   track-plugin-scoreboards: false
   fix-entity-position-desync: true
   player-auto-save-rate: -1
@@ -61,6 +64,40 @@ settings:
     allow-piston-duplication-readme: This setting controls if player should be able
       to use TNT duplication, but this also allows duplicating carpet, rails and potentially
       other items
+  console:
+    enable-brigadier-highlighting: true
+    enable-brigadier-completions: true
+  loggers:
+    deobfuscate-stacktraces: true
+  item-validation:
+    display-name: 8192
+    loc-name: 8192
+    lore-line: 8192
+    book:
+      title: 8192
+      author: 8192
+      page: 16384
+  use-display-name-in-quit-message: false
+  chunk-loading:
+    min-load-radius: 2
+    max-concurrent-sends: 2
+    autoconfig-send-distance: true
+    target-player-chunk-send-rate: 100.0
+    global-max-chunk-send-rate: -1.0
+    enable-frustum-priority: false
+    global-max-chunk-load-rate: -1.0
+    player-max-concurrent-loads: 4.0
+    global-max-concurrent-loads: 500.0
+  packet-limiter:
+    kick-message: '&cSent too many packets'
+    limits:
+      all:
+        interval: 7.0
+        max-packet-rate: 500.0
+      PacketPlayInAutoRecipe:
+        interval: 4.0
+        max-packet-rate: 5.0
+        action: DROP
 messages:
   no-permission: '&cI''m sorry, but you do not have permission to perform this command.
     Please contact the server administrators if you believe that this is in error.'
@@ -70,6 +107,7 @@ messages:
     authentication-servers-down: ''
     connection-throttle: Connection throttled! Please wait before reconnecting.
 timings:
+  url: https://timings.aikar.co/
   enabled: true
   verbose: true
   server-name-privacy: false
@@ -82,6 +120,14 @@ timings:
   server-name: Unknown Server
 world-settings:
   default:
+    split-overstacked-loot: true
+    piglins-guard-chests: true
+    map-item-frame-cursor-update-interval: 10
+    allow-player-cramming-damage: false
+    show-sign-click-command-failure-msgs-to-player: false
+    seed-based-feature-search-loads-chunks: true
+    fix-items-merging-through-walls: false
+    map-item-frame-cursor-limit: 128
     allow-using-signs-inside-spawn-protection: false
     fix-wither-targeting-bug: false
     ender-dragons-death-always-places-dragon-egg: false
@@ -104,7 +150,7 @@ world-settings:
     iron-golems-can-spawn-in-air: false
     entities-target-with-follow-range: false
     zombie-villager-infection-chance: -1.0
-    per-player-mob-spawns: false
+    per-player-mob-spawns: true
     enable-treasure-maps: true
     treasure-maps-return-already-discovered: false
     experience-merge-max-value: -1
@@ -196,9 +242,29 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
-      soft: 32
-      hard: 128
+      monster:
+        soft: 32
+        hard: 128
+      creature:
+        soft: 32
+        hard: 128
+      ambient:
+        soft: 32
+        hard: 128
+      underground_water_creature:
+        soft: 32
+        hard: 128
+      water_creature:
+        soft: 32
+        hard: 128
+      water_ambient:
+        soft: 32
+        hard: 64
+      misc:
+        soft: 32
+        hard: 128
     hopper:
+      ignore-occluding-blocks: true
       cooldown-when-full: true
       disable-move-event: false
     alt-item-despawn-rate:
@@ -206,6 +272,7 @@ world-settings:
       items:
         COBBLESTONE: 300
     anti-xray:
+      max-block-height: 64
       use-permission: false
       lava-obscures: false
       enabled: false
@@ -252,7 +319,33 @@ world-settings:
       - NORMAL
       - HARD
     entity-per-chunk-save-limit:
+      fireball: -1
+      small_fireball: -1
       experience_orb: -1
       snowball: -1
       ender_pearl: -1
       arrow: -1
+    spawn-limits:
+      monster: -1
+      creature: -1
+      underground_water_creature: -1
+      water_creature: -1
+      water_ambient: -1
+      ambient: -1
+    unsupported-settings:
+      fix-invulnerable-end-crystal-exploit: true
+    mob-effects:
+      undead-immune-to-certain-effects: true
+      spiders-immune-to-poison-effect: true
+      immune-to-wither-effect:
+        wither: true
+        wither-skeleton: true
+    tick-rates:
+      sensor:
+        villager:
+          secondarypoisensor: 40
+      behavior:
+        villager:
+          validatenearbypoi: -1
+    feature-seeds:
+      generate-random-seeds-for-all: false

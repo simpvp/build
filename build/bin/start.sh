@@ -1,13 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR=$(readlink -f $(dirname "$0"))
+PWD=$(pwd)
+if [[ "$SCRIPT_DIR" != "$PWD/bin" ]]; then
+	echo "This script must be run from the root of the server's directory" >/dev/stderr
+	exit 1
+fi
+
 # Server will not automatically restart within this many seconds of already restarting
 RESTART_LIMIT=60
 
 while true
 do
 	TIME=$(date -u +%s)
-	mv staging/* plugins/ || true
+	mv ../staging/* ../plugins/ || true
 	if [ -f ./lock ]; then
 		echo "Cannot start the server as another process is still running. Ensure the other server process is stopped before starting a new one."
 		echo "Running PID: $(< ./lock)"
@@ -16,7 +23,7 @@ do
 
 	echo -n "$PPID" > ./lock
 
-	./paper.sh || true
+	./bin/bwrap.sh || true
 
 
 	LOCK=$(< ./lock)
