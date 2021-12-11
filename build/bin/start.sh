@@ -14,7 +14,7 @@ RESTART_LIMIT=60
 while true
 do
 	TIME=$(date -u +%s)
-	mv ../staging/* ../plugins/ || true
+	mv staging/* plugins/ || true
 	if [ -f ./lock ]; then
 		echo "Cannot start the server as another process is still running. Ensure the other server process is stopped before starting a new one."
 		echo "Running PID: $(< ./lock)"
