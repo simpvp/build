@@ -1,19 +1,24 @@
 # This is the main configuration file for Paper.
 # As you can see, there's tons to configure. Some options may impact gameplay, so use
 # with caution, and make sure you know what each option does before configuring.
-# 
+#
 # If you need help with the configuration or have any questions related to Paper,
 # join us in our Discord or IRC channel.
-# 
+#
 # Discord: https://discord.gg/papermc
 # IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
 # Website: https://papermc.io/ 
-# Docs: https://paper.readthedocs.org/ 
+# Docs: https://docs.papermc.io/ 
 
 use-display-name-in-quit-message: false
 verbose: false
-config-version: 24
+config-version: 27
 settings:
+  fix-target-selector-tag-completion: true
+  time-command-affects-all-worlds: false
+  use-dimension-type-for-custom-spawners: false
+  proxy-protocol: false
+  resolve-selectors-in-books: false
   lag-compensate-block-breaking: true
   send-full-pos-for-hard-colliding-entities: true
   log-player-ip-addresses: true
@@ -68,6 +73,7 @@ settings:
     enable-brigadier-highlighting: true
     enable-brigadier-completions: true
   loggers:
+    use-rgb-for-named-text-colors: true
     deobfuscate-stacktraces: true
   item-validation:
     display-name: 8192
@@ -79,6 +85,7 @@ settings:
       page: 16384
   use-display-name-in-quit-message: false
   chunk-loading:
+    player-max-chunk-load-rate: -1.0
     min-load-radius: 2
     max-concurrent-sends: 2
     autoconfig-send-distance: true
@@ -86,7 +93,7 @@ settings:
     global-max-chunk-send-rate: -1.0
     enable-frustum-priority: false
     global-max-chunk-load-rate: -1.0
-    player-max-concurrent-loads: 4.0
+    player-max-concurrent-loads: 20.0
     global-max-concurrent-loads: 500.0
   packet-limiter:
     kick-message: '&cSent too many packets'
@@ -120,6 +127,24 @@ timings:
   server-name: Unknown Server
 world-settings:
   default:
+    slime-spawn-height:
+      swamp-biome:
+        maximum: 70.0
+        minimum: 50.0
+      slime-chunk:
+        maximum: 40.0
+    treasure-maps-find-already-discovered:
+      villager-trade: false
+      loot-tables: default
+    anticheat:
+      obfuscation:
+        items:
+          hide-itemmeta: false
+          hide-durability: false
+    monster-spawn-max-light-level: -1
+    wateranimal-spawn-height:
+      maximum: default
+      minimum: default
     split-overstacked-loot: true
     piglins-guard-chests: true
     map-item-frame-cursor-update-interval: 10
@@ -152,7 +177,6 @@ world-settings:
     zombie-villager-infection-chance: -1.0
     per-player-mob-spawns: true
     enable-treasure-maps: true
-    treasure-maps-return-already-discovered: false
     experience-merge-max-value: -1
     prevent-moving-into-unloaded-chunks: false
     max-auto-save-chunks-per-tick: 24
@@ -180,7 +204,6 @@ world-settings:
     water-over-lava-flow-speed: 5
     grass-spread-tick-rate: 1
     bed-search-radius: 1
-    use-faster-eigencraft-redstone: false
     nether-ceiling-void-damage-height: 0
     allow-non-player-entities-on-scoreboards: false
     disable-explosion-knockback: false
@@ -242,6 +265,9 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
+      axolotls:
+        soft: 32
+        hard: 128
       monster:
         soft: 32
         hard: 128
@@ -270,7 +296,7 @@ world-settings:
     alt-item-despawn-rate:
       enabled: false
       items:
-        COBBLESTONE: 300
+        cobblestone: 300
     anti-xray:
       max-block-height: 64
       use-permission: false
@@ -313,6 +339,12 @@ world-settings:
       zombies: false
       skeletons: false
     door-breaking-difficulty:
+      zombie_villager:
+      - HARD
+      husk:
+      - HARD
+      zombified_piglin:
+      - HARD
       zombie:
       - HARD
       vindicator:
@@ -326,6 +358,7 @@ world-settings:
       ender_pearl: -1
       arrow: -1
     spawn-limits:
+      axolotls: -1
       monster: -1
       creature: -1
       underground_water_creature: -1
@@ -349,3 +382,4 @@ world-settings:
           validatenearbypoi: -1
     feature-seeds:
       generate-random-seeds-for-all: false
+    redstone-implementation: vanilla

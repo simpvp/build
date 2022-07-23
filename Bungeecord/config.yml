@@ -1,3 +1,4 @@
+enforce_secure_profile: false
 listeners:
 - query_port: 25577
   motd: '&1Another Bungee server'
@@ -39,8 +40,8 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
-stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
 player_limit: -1
+prevent_proxy_connections: false
 ip_forward: true
 groups:
   MoWobbler:
@@ -54,7 +55,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-prevent_proxy_connections: false
+stats: acca7ccc-c9dd-4eba-a0ca-4e78f44ad55d
 online_mode: true
 forge_support: false
 disabled_commands:
@@ -62,10 +63,10 @@ disabled_commands:
 - server
 servers:
   Survival:
-    motd: '&1build.simpvp.net 1.17.1'
+    motd: '&abuild.simpvp.net 1.18.2'
     address: 127.0.0.25:25575
     restricted: false
   EventWorld:
-    motd: '&1build.simpvp.net 1.17.1'
+    motd: '&abuild.simpvp.net 1.18.2'
     address: 127.0.0.25:25580
     restricted: false
