@@ -309,7 +309,7 @@ world-settings:
       hidden-blocks:
       - gold_ore
       - deepslate_gold_ore
-      - iron_ore 
+      - iron_ore
       - deepslate_iron_ore
       - coal_ore
       - deepslate_coal_ore

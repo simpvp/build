@@ -17,14 +17,14 @@
 
 multiverse-configuration:
   ==: com.onarandombox.MultiverseCore.MultiverseCoreConfiguration
-  enforceaccess: 'false'
+  enforceaccess: 'true'
   prefixchat: 'true'
   prefixchatformat: '[%world%&r]%chat%'
   useasyncchat: 'true'
-  teleportintercept: 'true'
+  teleportintercept: 'false'
   firstspawnoverride: 'true'
   displaypermerrors: 'true'
-  globaldebug: '0'
+  globaldebug: '3'
   silentstart: 'false'
   messagecooldown: '5000'
   version: '2.9'
@@ -33,4 +33,4 @@ multiverse-configuration:
   defaultportalsearch: 'false'
   portalsearchradius: '128'
   autopurge: 'true'
-  idonotwanttodonate: 'false'
+  idonotwanttodonate: 'true'
