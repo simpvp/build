@@ -8,6 +8,9 @@ if [[ "$SCRIPT_DIR" != "$PWD/bin" ]]; then
 	exit 1
 fi
 
+# Fix people forgetting to set this
+sd "keepSpawnInMemory: 'true'" "keepSpawnInMemory: 'false'" plugins/Multiverse-Core/worlds.yml
+
 exec java -server -Dlog4j.configurationFile=./Log4j2.xml -DIReallyKnowWhatIAmDoingISwear=true \
 	-Xmx20G \
 	-jar ./bin/paper-1.20.1-100.jar
