@@ -144,6 +144,12 @@
     "bypassesPlayerLimit": false
   },
   {
+    "uuid": "fb7aa131-649c-4244-b9be-9bc448b10e2a",
+    "name": "Pippinger",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
     "uuid": "ea12c5a6-d64a-40bc-9581-ba2b4875f498",
     "name": "ZedZeppelin",
     "level": 4,
@@ -524,12 +530,6 @@
   {
     "uuid": "7e9a929f-f8c9-4e3f-b77f-cc5ffcaadfb6",
     "name": "TerraAquarius",
-    "level": 4,
-    "bypassesPlayerLimit": false
-  },
-  {
-    "uuid": "88a988c8-be7d-48c9-a576-956e4387d2fe",
-    "name": "LidGirl",
     "level": 4,
     "bypassesPlayerLimit": false
   },

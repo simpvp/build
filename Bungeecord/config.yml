@@ -63,10 +63,10 @@ disabled_commands:
 - server
 servers:
   Survival:
-    motd: '&ebuild.simpvp.net 1.19.4'
+    motd: '&abuild.simpvp.net 1.20.1'
     address: 127.0.0.25:25575
     restricted: false
   EventWorld:
-    motd: '&ebuild.simpvp.net 1.19.4'
+    motd: '&abuild.simpvp.net 1.20.1'
     address: 127.0.0.25:25580
     restricted: false

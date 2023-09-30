@@ -10,5 +10,5 @@ fi
 
 exec java -server -Dlog4j.configurationFile=./Log4j2.xml -DIReallyKnowWhatIAmDoingISwear=true \
 	-Xmx20G \
-	-jar ./bin/paper-1.19.4-521.jar
+	-jar ./bin/paper-1.20.1-100.jar
 
