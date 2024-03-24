@@ -16,7 +16,7 @@ settings:
   log-villager-deaths: true
   save-user-cache-on-stop-only: false
   sample-count: 12
-  bungeecord: true
+  bungeecord: false
   player-shuffle: 0
   user-cache-size: 1000
   moved-wrongly-threshold: 0.0625
@@ -61,6 +61,7 @@ stats:
   forced-stats: {}
 world-settings:
   default:
+    seed-trialchambers: 94251327
     seed-trailruins: 83469867
     hopper-can-load-chunks: false
     seed-ancientcity: 20083232
