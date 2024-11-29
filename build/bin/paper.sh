@@ -9,9 +9,11 @@ if [[ "$SCRIPT_DIR" != "$PWD/bin" ]]; then
 fi
 
 # Fix people forgetting to set this
+# Probably no longer needed: https://github.com/Multiverse/Multiverse-Core/issues/3072#issuecomment-2221814144
+# But let's keep it just in case.
 sd "keepSpawnInMemory: 'true'" "keepSpawnInMemory: 'false'" plugins/Multiverse-Core/worlds.yml
 
 exec java -server -Dlog4j.configurationFile=./Log4j2.xml -DIReallyKnowWhatIAmDoingISwear=true \
 	-Xmx20G \
-	-jar ./bin/paper-1.21-124.jar
+	-jar ./bin/paper-1.21.1-52.jar
 
