@@ -15,5 +15,5 @@ sd "keepSpawnInMemory: 'true'" "keepSpawnInMemory: 'false'" plugins/Multiverse-C
 
 exec java -server -Dlog4j.configurationFile=./Log4j2.xml -DIReallyKnowWhatIAmDoingISwear=true \
 	-Xmx20G \
-	-jar ./bin/paper-1.21.1-52.jar
+	-jar ./bin/paper-1.21.4-144.jar
 
